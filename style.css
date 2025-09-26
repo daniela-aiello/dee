@@ -1,0 +1,564 @@
+/*body*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: sue ellen;
+    src: url(fonts/sue-ellen-francisco-v21-latin-regular.woff2);
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-display: swap;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/lato-v24-latin-regular.woff2') format('woff2');
+}
+
+
+body {
+    font-family: sans-serif;
+    padding: 0.5rem;
+    background-color: #f5f3ef;
+    min-height: 100vh;
+
+
+}
+
+/*Logo*/
+.logo img {
+    height: 60px;
+    align-items: center;
+}
+
+.logo img:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+/*dark light mode*/
+#theme-select {
+    height: 40px;
+    width: 50px;
+    padding: 5px;
+
+    background-color: #3264a8;
+    border: none;
+}
+
+#theme-select:hover {
+    cursor: pointer;
+    transform: scale(1.8);
+}
+
+body.light {
+    background: #f5f3ef;
+    color: black;
+}
+
+body.dark {
+    background: #000;
+    color: #fff;
+}
+
+body.dark h1 {
+    color: #fff;
+}
+
+body.dark .kontakt-container,
+body.dark .kontakt-container h2 {
+    color: black;
+}
+
+/*Header*/
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #3264a8;
+    height: 60px;
+    padding: 10px 10px 30px;
+
+}
+
+/*Nav*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.nav {
+    display: none;
+    flex-direction: column;
+
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: rgb(255, 217, 0);
+}
+
+.menu-toggle {
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/*burger menu*/
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu.show {
+        display: flex;
+        background-color: #a9b080;
+    }
+}
+
+/*hero section*/
+.hero-content {
+    display: flex;
+    min-height: 80vh;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    gap: 40px;
+}
+
+.hero-left {
+    flex: 1;
+    padding-left: 1em;
+}
+
+h1 {
+    font-family: sue ellen;
+    font-size: 12rem;
+    font-weight: 100;
+    color: black;
+    text-align: center;
+}
+
+.quote-author {
+    font-size: 1.1rem;
+}
+
+.subtext {
+    font-size: 1.5rem;
+}
+
+.animation {
+    margin-left: 40px;
+    width: 500px;
+}
+
+p {
+    line-height: 1.6;
+    text-align: center;
+}
+
+
+.hero-img {
+    flex: 1;
+    align-items: right;
+}
+
+.hero-img img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ff0404;
+}
+
+/*responsive hero*/
+@media(max-width: 768px) {
+    .hero-content {
+        padding: 2em 1em;
+        min-height: 60vh;
+        flex-direction: column;
+    }
+    h1{
+        font-size: 10rem;
+        
+    }
+   .subtext{
+    font-size: 1rem;
+   }
+}
+
+/*runde bilder container*/
+.dreispalten-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+    background-color: #a9b080;
+}
+
+.spalte {
+    flex: 1;
+    min-width: 150px;
+}
+
+.spalte p {
+    margin: 10px;
+}
+
+.rundes-bild {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ff0404;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+.rundes-bild:hover {
+    transform: scale(1.2);
+    border-color: rgb(255, 217, 0);
+}
+
+/*responsive dreispalten*/
+@media(max-width: 768px) {
+    .dreispalten-container {
+        padding: 2em 1em;
+        min-height: 20vh;
+
+        flex-direction: column;
+    }
+}
+
+/*zweispalten*/
+.zweispalten {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 100%;
+    margin: 20px;
+}
+
+.bildbereich {
+    flex: 1 1 200px;
+    text-align: center;
+}
+
+.bildbereich img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ff0404;
+}
+
+.textbereich {
+    flex: 1 1 300px;
+}
+
+.textbereich h2 {
+    margin-bottom: 15px;
+    font-size: 24px;
+    text-align: right;
+}
+
+.textbereich p {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: right;
+}
+
+/*slider*/
+.slider-wrapper {
+    width: 100%;
+    background-color: #a9b080;
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-button {
+    margin-top: 1rem;
+}
+
+
+.slider {
+    width: 600px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+
+.slides {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide.active {
+    display: block;
+}
+
+button.prev,
+button.next {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+button.prev:hover,
+button.next:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: #000;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+/*responsive slider*/
+@media(max-width: 768px) {
+    .slide {
+        flex: 0 0 60%;
+    }
+}
+
+/*footer*/
+.footer {
+    background-color: #3264a8;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    font-family: sans-serif;
+    font-size: 14px;
+    margin-top: 10px;
+
+}
+
+.footer nav {
+    margin-top: 10px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 8px;
+}
+
+.footer a:hover {
+    color: rgb(255, 217, 0);
+}
+
+.footer img {
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    padding: 5px;
+   
+    margin: 10px;
+    display: inline;
+    margin-bottom: -10px;
+}
+
+.footer img:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+/*ueber*/
+.hero-ueber {
+    display: flex;
+    justify-content: center;
+    background-color: #a9b080;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.hero-ueber h2 {
+    font-size: 100px;
+    font-family: sue ellen;
+    src: url(fonts/Sue_Ellen_Francisco/SueEllenFrancisco-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+    margin-right: 500px;
+}
+
+.hero-ueber-text {
+    text-align: left;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+/*entdecken*/
+.hero-entdecken {
+    display: flex;
+    justify-content: center;
+    background-color: #a9b080;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.hero-entdecken h2 {
+    font-size: 100px;
+    font-family: sue ellen;
+    src: url(fonts/Sue_Ellen_Francisco/SueEllenFrancisco-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+    margin-right: 200px;
+}
+
+.hero-entdecken-text {
+    text-align: left;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+/*kulinarisch*/
+.hero-kulinarisch {
+    display: flex;
+    justify-content: center;
+    background-color: #a9b080;
+    margin: 10px;
+    padding: 10px;
+    align-items: center;
+}
+
+.hero-kulinarisch h2 {
+    font-size: 100px;
+    font-family: sue ellen;
+    src: url(fonts/Sue_Ellen_Francisco/SueEllenFrancisco-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+    margin-right: 200px;
+}
+
+.hero-kulinarisch-text {
+    text-align: left;
+    padding: 20px;
+    font-size: 1.2rem;
+}
+
+/*kontakt*/
+.kontakt-container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.kontakt-container h2 {
+    font-size: 100px;
+    font-family: sue ellen;
+    src: url(fonts/Sue_Ellen_Francisco/SueEllenFrancisco-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.kontakt-text {
+    text-align: center;
+    padding: 60px;
+    font-size: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid rgb(255, 217, 0);
+    box-sizing: border-box;
+}
+
+.kontakt-container button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background-color: #a9b080;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.kontakt-container button:hover {
+    background-color: rgb(255, 217, 0);
+}
